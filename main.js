@@ -9,7 +9,7 @@ var app = app || {};
 * MODELS
 **/
 app.Message = Backbone.Model.extend({  
-  url: function(){return 'http://api.openweathermap.org/data/2.5/weather?q='
+  url: function(){return 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q='
   +this.city+'&APPID=da588028e432fb9d877ea7b20add041b'},
   city: '',
   defaults: {

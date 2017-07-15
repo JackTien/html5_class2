@@ -65,3 +65,22 @@ gulp.task('build', function (cb) {
 gulp.task('default', [], function (cb) {
     gulp.start('build', cb);
 });
+
+
+var browserSync = require("browser-sync");
+
+gulp.task('browser', function(cb) {
+    browserSync.init(null,{
+        server: {
+            baseDir:['dist']
+        },
+        notify: false
+      });
+      gulp.watch([
+        'dist/**/*.html',
+        'dist/**/*.js',
+        'dist/**/*.css'
+        ], browserSync.reload);  
+
+});
+
